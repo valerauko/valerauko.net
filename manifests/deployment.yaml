@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: valerauko.net
+  labels:
+    app: valerauko.net
+    role: static
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: valerauko.net
+      role: static
+  template:
+    metadata:
+      labels:
+        app: valerauko.net
+        role: static
+    spec:
+      containers:
+        - name: valerauko.net
+          image: valerauko/valerauko.net:sha-c3f2617
+          ports:
+            - name: http
+              containerPort: 80
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+            failureThreshold: 3
+            initialDelaySeconds: 30
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 2
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            failureThreshold: 5
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 5
