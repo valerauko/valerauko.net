@@ -8,9 +8,9 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
 spec:
-  tls:
-    - hosts:
-      - valerauko.net
+  # tls:
+  #   - hosts:
+  #     - valerauko.net
   rules:
     - host: valerauko.net
       http:
