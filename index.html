@@ -10,14 +10,42 @@
     <meta name="publisher" content="valerauko.net" />
     <title>valerauko.net</title>
     <style type="text/css">
-      :active, :focus { border:none; outline:none; }
-      *     { margin:0; padding:0; }
-      body  { color:#ccc; background:#111; cursor:default; font:normal normal 16px/1.5em Alegreya, Tahoma, Helvetica, sans-serif; width:25%; float:right; padding-top:20%; }
-      p     { margin:1em 0; }
-      ul    { list-style:disc outside none; }
-      h1    { font-size:2em; line-height:1.5em; }
-      a:link, a:visited { color:#eee; }
-      a:hover, a:active { color:#ccc; text-decoration:none; }
+      * {
+        margin:0; padding:0; min-width: 0;
+      }
+      body {
+        color:#ccc;
+        background:#111;
+        cursor:default;
+        height:100vh;
+        min-height:200px;
+        min-width:350px;
+        padding:2em;
+        box-sizing: border-box;
+        font:normal normal 16px/1.5em sans-serif;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-end;
+      }
+      h1, p, ul {
+        min-width:300px;
+      }
+      p {
+        margin:1em 0;
+      }
+      ul {
+        list-style:disc outside none;
+      }
+      h1 {
+        font-size:2em; line-height:1.5em;
+      }
+      a:link, a:visited {
+        color:#999;
+      }
+      a:hover, a:active {
+        color:#ccc; text-decoration:none;
+      }
     </style>
   </head>
   <!-- hello world! -->
