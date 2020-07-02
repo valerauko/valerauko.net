@@ -18,7 +18,7 @@ spec:
         role: static
     spec:
       containers:
-        - name: valerauko.net
+        - name: valerauko-net
           image: valerauko/valerauko.net:sha-64f6a74
           ports:
             - name: http
