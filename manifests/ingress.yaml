@@ -10,8 +10,15 @@ metadata:
 spec:
   tls:
     - hosts:
+      - balint.erdos.tech
       - valerauko.net
   rules:
+    - host: balint.erdos.tech
+      http:
+        paths:
+          - backend:
+              serviceName: valerauko-net
+              servicePort: http
     - host: valerauko.net
       http:
         paths:
