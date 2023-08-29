@@ -19,6 +19,14 @@ spec:
         app: valerauko.net
         role: static
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  app: valerauko.net
+                  role: static
+              topologyKey: kubernetes.io/hostname
       containers:
         - name: valerauko-net
           image: valerauko/valerauko.net:sha-6067ccf
