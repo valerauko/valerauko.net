@@ -9,6 +9,10 @@ metadata:
     role: static
 spec:
   replicas: 2
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
   selector:
     matchLabels:
       app: valerauko.net
@@ -27,10 +31,6 @@ spec:
                   app: valerauko.net
                   role: static
               topologyKey: kubernetes.io/hostname
-      strategy:
-        rollingUpdate:
-          maxSurge: 1
-          maxUnavailable: 1
       containers:
         - name: valerauko-net
           image: valerauko/valerauko.net:sha-6067ccf
