@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: valerauko-net
@@ -17,11 +17,19 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: valerauko-net
-              servicePort: http
+              service:
+                name: valerauko-net
+                port:
+                  name: http
+            path: /
+            pathType: Prefix
     - host: valerauko.net
       http:
         paths:
           - backend:
-              serviceName: valerauko-net
-              servicePort: http
+              service:
+                name: valerauko-net
+                port:
+                  name: http
+            path: /
+            pathType: Prefix
