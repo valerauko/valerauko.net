@@ -10,8 +10,11 @@ metadata:
 spec:
   tls:
     - hosts:
-      - balint.erdos.tech
-      - valerauko.net
+        - valerauko.net
+      secretName: valerauko-net-tls
+    - hosts:
+        - balint.erdos.tech
+      secretName: erdos-tech-tls
   rules:
     - host: balint.erdos.tech
       http:
